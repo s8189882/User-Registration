@@ -32,7 +32,7 @@ public class UserValidation {
 	
 	public boolean validatePassword(String input) {
 		
-		String password = "^(?=.*[A-Z])(?=.*[0-9])(?=.{8,}$)[a-zA-Z0-9]*[@#$%^&-+=()][a-zA-Z0-9]*$";		
+		String password = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?=.{8,}$)[a-zA-Z0-9]*[@#$%^&-+=()][a-zA-Z0-9]*$";		
 		
 		System.out.println("\nValidating Password...");
 		return match(password, input);
