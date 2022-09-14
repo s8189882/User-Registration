@@ -19,6 +19,9 @@ public class UserValidation {
 		
 		System.out.println("\nEnter Last Name : ");
 		validateName(getUserInput());
+		
+		System.out.println("\nEnter Email Id : ");
+		validateEmail(getUserInput());
 	}
 	
 	public String getUserInput() {
@@ -27,15 +30,27 @@ public class UserValidation {
 		return sc.nextLine();
 	}
 	
+	public void validateEmail(String input) {
+		
+		String email = "^[0-9a-zA-Z]+([_+-.a-z0-9A-Z]+)*[@][a-zA-Z]+[.][a-z]{2,4}([.][a-z]{2})?$";
+		
+		System.out.println("\nValidating Email...");
+		match(email, input);
+	}
+	
+	public void match(String regex, String input) {
+		Pattern pattern = Pattern.compile(regex);
+		Matcher match = pattern.matcher(input);
+		
+		printResult(match.matches(), input);
+	}
+	
 	public void validateName(String input) {
 		
 		String name = "^[A-Z][a-zA-Z]{2,}$";
 		
-		Pattern pattern = Pattern.compile(name);
-		Matcher match = pattern.matcher(input);
-		
 		System.out.println("\nValidating Name...");
-		printResult(match.matches(), input);
+		match(name, input);
 	}
 	
 	public void printResult(boolean isOkay, String input) {
