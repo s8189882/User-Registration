@@ -31,7 +31,7 @@ public class UserValidation {
 	}
 	
 	private void validatePassword(String input) {
-		String password = "[0-9a-zA-Z]{8,}";
+		String password = "^(?=.*[A-Z])[0-9a-zA-Z]{8,}$";
 		
 		System.out.println("\nValidating Password...");
 		match(password, input);
