@@ -10,8 +10,15 @@ public class UserValidation {
 		System.out.println("Welcome to Regular Expressions program to validate user entries in a User Registration System!\n");
 		UserValidation userEntry = new UserValidation();
 		
+		userEntry.validateEntries();
+	}
+	
+	public void validateEntries() {
 		System.out.println("\nEnter First Name : ");
-		userEntry.validateFirstName(userEntry.getUserInput());
+		validateName(getUserInput());
+		
+		System.out.println("\nEnter Last Name : ");
+		validateName(getUserInput());
 	}
 	
 	public String getUserInput() {
@@ -20,14 +27,14 @@ public class UserValidation {
 		return sc.nextLine();
 	}
 	
-	public void validateFirstName(String input) {
+	public void validateName(String input) {
 		
-		String firstName = "^[A-Z][a-zA-Z]{2,}$";
+		String name = "^[A-Z][a-zA-Z]{2,}$";
 		
-		Pattern pattern = Pattern.compile(firstName);
+		Pattern pattern = Pattern.compile(name);
 		Matcher match = pattern.matcher(input);
 		
-		System.out.println("\nValidating First Name...");
+		System.out.println("\nValidating Name...");
 		printResult(match.matches(), input);
 	}
 	
