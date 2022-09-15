@@ -22,12 +22,23 @@ public class UserValidation {
 		
 		System.out.println("\nEnter Email Id : ");
 		validateEmail(getUserInput());
+		
+		System.out.println("\nEnter Mobile Number : ");
+		validateMobileNumber(getUserInput());
 	}
 	
 	public String getUserInput() {
 		Scanner sc = new Scanner(System.in);
 		
 		return sc.nextLine();
+	}
+	
+	public void validateMobileNumber(String input) {
+		
+		String mobile = "^[0-9]{2}\\s[0-9]{10}$";
+		
+		System.out.println("\nValidating Mobile Number...");
+		match(mobile, input);
 	}
 	
 	public void validateEmail(String input) {
