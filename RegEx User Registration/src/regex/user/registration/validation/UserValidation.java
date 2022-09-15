@@ -10,7 +10,7 @@ public class UserValidation {
 		System.out.println("Welcome to Regular Expressions program to validate user entries in a User Registration System!\n");
 		UserValidation userEntry = new UserValidation();
 		
-		userEntry.testMails();
+		userEntry.validateEntries();
 	}
 	
 	public void validateEntries() {
