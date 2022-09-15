@@ -10,7 +10,7 @@ public class UserValidation {
 		System.out.println("Welcome to Regular Expressions program to validate user entries in a User Registration System!\n");
 		UserValidation userEntry = new UserValidation();
 		
-		userEntry.validateEntries();
+		userEntry.testMails();
 	}
 	
 	public void validateEntries() {
@@ -31,7 +31,7 @@ public class UserValidation {
 	}
 	
 	public boolean validatePassword(String input) {
-		
+  
 		String password = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?=.{8,}$)[a-zA-Z0-9]*[@#$%^&-+=()][a-zA-Z0-9]*$";		
 		
 		System.out.println("\nValidating Password...");
