@@ -10,7 +10,7 @@ public class UserValidation {
 		System.out.println("Welcome to Regular Expressions program to validate user entries in a User Registration System!\n");
 		UserValidation userEntry = new UserValidation();
 		
-		userEntry.validateEntries();
+		userEntry.testMails();
 	}
 	
 	public void validateEntries() {
@@ -28,6 +28,31 @@ public class UserValidation {
 		
 		System.out.println("\nEnter Password : ");
 		validatePassword(getUserInput());
+	}
+	
+	public void testMails() {
+		validateEmail("abc@yahoo.com");
+		validateEmail("abc");
+		validateEmail("abc-100@yahoo.com");
+		validateEmail("abc@.com.my");
+		validateEmail("abc.100@yahoo.com");
+		validateEmail("abc123@gmail.a");
+		validateEmail("abc111@abc.com");
+		validateEmail("abc123@.com");
+		validateEmail("abc-100@abc.net");
+		validateEmail("abc123@.com.com");
+		validateEmail("abc.100@abc.com.au");
+		validateEmail(".abc@abc.com");
+		validateEmail("abc@1.com");
+		validateEmail("abc()*@gmail.com");
+		validateEmail("abc@gmail.com.com");
+		validateEmail("abc@%*.com");
+		validateEmail("abc+100@gmail.com");
+		validateEmail("abc..2002@gmail.com");
+		validateEmail("abc.@gmail.com");
+		validateEmail("abc@abc@gmail.com");
+		validateEmail("abc@gmail.com.1a");
+		validateEmail("abc@gmail.com.aa.au");
 	}
 	
 	private void validatePassword(String input) {
