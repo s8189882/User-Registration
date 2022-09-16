@@ -32,8 +32,9 @@ public class UserValidation {
 		validatePassword(getUserInput());
 	}
 	
-	public boolean validatePassword(String input) throws UserValidationException {
-		
+
+	public boolean validatePassword(String input) throws UserValidationException {	
+
 		String password = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?=.{8,}$)[a-zA-Z0-9]*[@#$%^&-+=()][a-zA-Z0-9]*$";		
 		
 		try {
