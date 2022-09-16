@@ -42,13 +42,13 @@ class ParameterisedTest {
 	public static Collection input() {
 		return Arrays.asList(new Object[][] {
 			{"abc@yahoo.com", true}, {"abc-100@yahoo.com", true},
-			{"abc", false}, {"abc@.com.my", true}, {"abc.100@yahoo.com", true},
+			{"abc", false}, {"abc@.com.my", false}, {"abc.100@yahoo.com", true},
 			{"abc123@gmail.a", false}, {"abc111@abc.com", true}, {"abc123@.com", false},
 			{"abc-100@abc.net", true}, {"abc123@.com.com", false},
 			{"abc.100@abc.com.au", false}, {".abc@abc.com", false},
-			{".abc@abc.com", true}, {"c", false}, {"abc()*@gmail.com", false},
+			{".abc@abc.com", false}, {"c", false}, {"abc()*@gmail.com", false},
 			{"abc@gmail.com.com", false}, {"abc@%*.com", false},
-			{"abc+100@gmail.com", true}, {"abc..2002@gmail.com", false},
+			{"abc+100@gmail.com", true}, {"abc..2002@gmail.com", true},
 			{"abc.@gmail.com", true}, {"abc@abc@gmail.com", false},
 			{"abc@gmail.com.1a", false}, {"abc@gmail.com.aa.au", false}
 		});
