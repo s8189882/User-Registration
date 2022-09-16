@@ -1,28 +1,26 @@
 package regex.user.registration.validation;
 
+
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 import java.util.Collection;
 
 import org.junit.Before;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import junit.framework.Assert;
+
 
 @RunWith(Parameterized.class)
-class ParameterisedTest {
-	public UserValidation check;
-	public String email;
-	public boolean result;
+class Parameterjunit4 {
 
-	public ParameterisedTest(String email, boolean result) {
+	public UserValidation check;
+	private String email;
+	private boolean result;
+
+	public Parameterjunit4(String email, boolean result) {
 		super();
 		this.email = email;
 		this.result = result;
@@ -48,9 +46,9 @@ class ParameterisedTest {
 			{"abc@gmail.com.1a", false}, {"abc@gmail.com.aa.au", false}
 		});
 	}
-	
+
 	@Test
-	public void testWhenEmail_isEntered_returnAppropriateResult() throws UserValidationException {
+	public void testWhenEmail_isEntered_returnAppropriateResult() {
 		boolean match = check.validateEmail(this.email);
 		assertEquals(this.result, match);
 	}

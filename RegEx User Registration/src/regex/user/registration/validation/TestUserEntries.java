@@ -9,72 +9,182 @@ import org.junit.jupiter.api.Test;
 class TestUserEntries {
 
 	@Test
-	public void testWhenFirstName_isProper_returnTrue() {
+	public void testWhenFirstName_isProper_returnTrue() throws UserValidationException {
 		UserValidation validate = new UserValidation();
 		boolean result = validate.validateName("Priya");
-		Assert.assertEquals(true, result);
+		assertEquals(true, result);
 	}
 	
 	@Test
-	public void testWhenFirstName_isNotProper_returnFalse() {
+	public void testWhenFirstName_isNotProper_returnFalse() throws UserValidationException {
 		UserValidation validate = new UserValidation();
 		boolean result = validate.validateName("123Priya");
-		Assert.assertEquals(false, result);
+		assertEquals(false, result);
 	}
 	
 	@Test
-	public void testWhenLastName_isProper_returnTrue() {
+	public void testWhenFirstName_isNull_throwException() {
+		UserValidation validate = new UserValidation();
+		boolean result = false;
+		try {
+			result = validate.validateName(null);
+		} catch (UserValidationException e) {
+			assertEquals(UserValidationException.ExceptionType.ENTERED_NULL, e.type);
+		}
+	}
+	
+	@Test
+	public void testWhenFirstName_isEmpty_throwException() throws UserValidationException {
+		UserValidation validate = new UserValidation();
+		boolean result = false;
+		try {
+			result = validate.validateName("");
+		} catch (UserValidationException e) {
+			assertEquals(UserValidationException.ExceptionType.ENTERED_EMPTY, e.type);
+		}
+	}
+	
+	@Test
+	public void testWhenLastName_isProper_returnTrue() throws UserValidationException {
 		UserValidation validate = new UserValidation();
 		boolean result = validate.validateName("Kulkarni");
-		Assert.assertTrue(result);
+		assertTrue(result);
 	}
 	
 	@Test
-	public void testWhenLastName_isNotProper_returnFalses() {
+	public void testWhenLastName_isNotProper_returnFalses() throws UserValidationException {
 		UserValidation validate = new UserValidation();
 		boolean result = validate.validateName("Pi321");
-		Assert.assertFalse(result);
+		assertFalse(result);
 	}
 	
 	@Test
-	public void testWhenEmail_isProper_returnTrue() {
+	public void testWhenLastName_isNull_throwException() throws UserValidationException {
+		UserValidation validate = new UserValidation();
+		boolean result = false;
+		try {
+			result = validate.validateName(null);
+		} catch (UserValidationException e) {
+			assertEquals(UserValidationException.ExceptionType.ENTERED_NULL, e.type);
+		}
+	}
+	
+	@Test
+	public void testWhenLastName_isEmpty_throwException() throws UserValidationException {
+		UserValidation validate = new UserValidation();
+		boolean result = false;
+		try {
+			result = validate.validateName("");
+		} catch (UserValidationException e) {
+			assertEquals(UserValidationException.ExceptionType.ENTERED_EMPTY, e.type);
+		}
+	}
+	
+	@Test
+	public void testWhenEmail_isProper_returnTrue() throws UserValidationException {
 		UserValidation validate = new UserValidation();
 		boolean result = validate.validateEmail("priya.pp314@gmail.com");
-		Assert.assertTrue(result);
+		assertTrue(result);
 	}
 	
 	@Test
-	public void testWhenEmail_isNotProper_returnTrue() {
+	public void testWhenEmail_isNotProper_returnTrue() throws UserValidationException {
 		UserValidation validate = new UserValidation();
 		boolean result = validate.validateEmail("_priyaprakash@google.co.aus");
-		Assert.assertFalse(result);
+		assertFalse(result);
 	}
 	
 	@Test
-	public void testWhenMobileNumber_isProper_returnTrue() {
+	public void testWhenEmail_isNull_throwException() throws UserValidationException {
+		UserValidation validate = new UserValidation();
+		boolean result = false;
+		try {
+			result = validate.validateEmail(null);
+		} catch (UserValidationException e) {
+			assertEquals(UserValidationException.ExceptionType.ENTERED_NULL, e.type);
+		}
+	}
+	
+	@Test
+	public void testWhenEmail_isEmpty_throwException() throws UserValidationException {
+		UserValidation validate = new UserValidation();
+		boolean result = false;
+		try {
+			result = validate.validateEmail("");
+		} catch (UserValidationException e) {
+			assertEquals(UserValidationException.ExceptionType.ENTERED_EMPTY, e.type);
+		}
+	}
+	
+	@Test
+	public void testWhenMobileNumber_isProper_returnTrue() throws UserValidationException {
 		UserValidation validate = new UserValidation();
 		boolean result = validate.validateMobileNumber("91 9177882347");
-		Assert.assertTrue(result);
+		assertTrue(result);
 	}
 	
 	@Test
-	public void testWhenMobileNumber_isNotProper_returnFalses() {
+	public void testWhenMobileNumber_isNotProper_returnFalses() throws UserValidationException {
 		UserValidation validate = new UserValidation();
 		boolean result = validate.validateMobileNumber("7263849386");
-		Assert.assertFalse(result);
+		assertFalse(result);
 	}
 	
 	@Test
-	public void testWhenPassword_isProper_returnTrue() {
+	public void testWhenMobileNumber_isNull_throwException() throws UserValidationException {
+		UserValidation validate = new UserValidation();
+		boolean result = false;
+		try {
+			result = validate.validateMobileNumber(null);
+		} catch (UserValidationException e) {
+			assertEquals(UserValidationException.ExceptionType.ENTERED_NULL, e.type);
+		}
+	}
+	
+	@Test
+	public void testWhenMobileNumber_isEmpty_throwException() throws UserValidationException {
+		UserValidation validate = new UserValidation();
+		boolean result = false;
+		try {
+			result = validate.validateMobileNumber("");
+		} catch (UserValidationException e) {
+			assertEquals(UserValidationException.ExceptionType.ENTERED_EMPTY, e.type);
+		}
+	}
+	
+	@Test
+	public void testWhenPassword_isProper_returnTrue() throws UserValidationException {
 		UserValidation validate = new UserValidation();
 		boolean result = validate.validatePassword("Password1323$pkkakmd");
-		Assert.assertTrue(result);
+		assertTrue(result);
 	}
 	
 	@Test
-	public void testWhenPassword_isNotProper_returnFalses() {
+	public void testWhenPassword_isNotProper_returnFalses() throws UserValidationException {
 		UserValidation validate = new UserValidation();
 		boolean result = validate.validatePassword("passwordjsnfksjf");
-		Assert.assertFalse(result);
+		assertFalse(result);
+	}
+	
+	@Test
+	public void testWhenPassword_isNull_throwException() throws UserValidationException {
+		UserValidation validate = new UserValidation();
+		boolean result = false;
+		try {
+			result = validate.validatePassword(null);
+		} catch (UserValidationException e) {
+			assertEquals(UserValidationException.ExceptionType.ENTERED_NULL, e.type);
+		}
+	}
+	
+	@Test
+	public void testWhenPassword_isEmpty_throwException() throws UserValidationException {
+		UserValidation validate = new UserValidation();
+		boolean result = false;
+		try {
+			result = validate.validatePassword("");
+		} catch (UserValidationException e) {
+			assertEquals(UserValidationException.ExceptionType.ENTERED_EMPTY, e.type);
+		}
 	}
 }
