@@ -1,20 +1,14 @@
 package regex.user.registration.validation;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 import java.util.Collection;
 
 import org.junit.Before;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
-import junit.framework.Assert;
 
 @RunWith(Parameterized.class)
 class ParameterisedTest {
@@ -51,7 +45,7 @@ class ParameterisedTest {
 	
 	@Test
 	public void testWhenEmail_isEntered_returnAppropriateResult() throws UserValidationException {
-		boolean match = check.validateEmail(this.email);
+		boolean match = check.validateEmail.validate(email);
 		assertEquals(this.result, match);
 	}
 }
