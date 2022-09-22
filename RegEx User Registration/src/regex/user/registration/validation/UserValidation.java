@@ -15,8 +15,8 @@ interface IUserEntryValidator {
 public class UserValidation {
 	
 	
+
 	IUserEntryValidator validatePassword = (String userInput) -> {
-		
 		try {
 			if(userInput.length() == 0) {
 				throw new UserValidationException(ExceptionType.ENTERED_EMPTY, "You have entered an empty string!\nPlease enter a valid input.");
@@ -31,7 +31,6 @@ public class UserValidation {
 	
 	
 	IUserEntryValidator validateMobileNumber = (String userInput) -> {
-		
 		try {
 			if(userInput.length() == 0) {
 				throw new UserValidationException(ExceptionType.ENTERED_EMPTY, "You have entered an empty string!\nPlease enter a valid input.");
@@ -46,7 +45,6 @@ public class UserValidation {
 	
 	
 	IUserEntryValidator validateEmail = (String userInput) -> {		
-		
 		try {
 			if(userInput.length() == 0) {
 				throw new UserValidationException(ExceptionType.ENTERED_EMPTY, "You have entered an empty string!\nPlease enter a valid input.");
@@ -69,7 +67,6 @@ public class UserValidation {
 	
 	
 	IUserEntryValidator validateName = (String userInput) -> {
-		
 		try {
 			if(userInput.length() == 0) {
 				throw new UserValidationException(ExceptionType.ENTERED_EMPTY, "You have entered an empty string!\nPlease enter a valid input.");
